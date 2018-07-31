@@ -93,6 +93,7 @@
     <instance objName="block" x="32" y="448" name="inst_505884C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="0" y="448" name="inst_77C1CD9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="starting_location" x="0" y="416" name="inst_5AD45DBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="button" x="128" y="544" name="inst_0456B138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
