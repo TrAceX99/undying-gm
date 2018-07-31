@@ -58,7 +58,7 @@ damping = 1;
             <kind>1</kind>
             <string>///Movement
 hspd -= sign(hspd) * damping;
-hspd = clamp(hspd + (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * moveaccel, -movespeed, movespeed);
+hspd = clamp(hspd + (keyboard_check(vk_left) - keyboard_check(vk_right)) * moveaccel, -movespeed, movespeed);
 vspd = clamp(vspd + g, -maxspeed, maxspeed);
 
 if (place_meeting(x + hspd + sign(hspd), y, block)) {
