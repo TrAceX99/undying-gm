@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>gravity = 1;
-vspeed = 0;
-hspeed = 0;
-jumpspeed = 12;
+            <string>///Setup
+g = 1;
+vspd = 0;
+hspd = 0;
+jumpspeed = 14;
 maxspeed = 15;
 movespeed = 7;
 moveaccel = 2;
@@ -56,21 +57,21 @@ damping = 1;
           <argument>
             <kind>1</kind>
             <string>///Movement
-hspeed -= sign(hspeed) * damping;
-hspeed = clamp(hspeed + (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * moveaccel, -movespeed, movespeed);
-vspeed = clamp(vspeed + gravity, -maxspeed, maxspeed);
+hspd -= sign(hspd) * damping;
+hspd = clamp(hspd + (keyboard_check(ord("D")) - keyboard_check(ord("A"))) * moveaccel, -movespeed, movespeed);
+vspd = clamp(vspd + g, -maxspeed, maxspeed);
 
-if (place_meeting(x + hspeed + sign(hspeed), y, block)) {
-    while (!place_meeting(x + sign(hspeed), y, block)) x += sign(hspeed);
-    hspeed = 0;
+if (place_meeting(x + hspd + sign(hspd), y, block)) {
+    while (!place_meeting(x + sign(hspd), y, block)) x += sign(hspd);
+    hspd = 0;
 }
-x = clamp(x + hspeed, 0, room_width);
+x = clamp(x + hspd, 0, room_width);
 
-if (place_meeting(x, y + vspeed + sign(vspeed), block)) {
-    while (!place_meeting(x, y + sign(vspeed), block)) y += sign(vspeed);
-    vspeed = -keyboard_check_pressed(vk_space) * jumpspeed;
+if (place_meeting(x, y + vspd + sign(vspd), block)) {
+    while (!place_meeting(x, y + sign(vspd), block)) y += sign(vspd);
+    vspd = -keyboard_check_pressed(vk_space) * jumpspeed;
 }
-y = clamp(y + vspeed, 0, room_height);
+y = clamp(y + vspd, 0, room_height);
 </string>
           </argument>
         </arguments>
@@ -91,10 +92,40 @@ y = clamp(y + vspeed, 0, room_height);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Next level
+            <string>///Room switch
 if (x == room_width) {
     room_goto_next();
+    x = 1;
 }
+if (x == 0) {
+    room_goto_previous();
+    x = room_width - 1;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="acid">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ded
+show_message("U DED!");
+game_restart();
 </string>
           </argument>
         </arguments>
@@ -117,7 +148,9 @@ if (x == room_width) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start = instance_find(starting_location, 0);
+            <string>///Obsolete
+/*
+starting_location = instance_find(starting_location, 0);
 x = start.x;
 y = start.y;
 instance_destroy(start);
