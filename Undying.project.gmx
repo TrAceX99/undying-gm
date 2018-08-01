@@ -10,6 +10,7 @@
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_acid</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_cryingenemy</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -19,6 +20,7 @@
     <object>objects\starting_location</object>
     <object>objects\acid</object>
     <object>objects\button</object>
+    <object>objects\obj_cryingenemy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_1</room>

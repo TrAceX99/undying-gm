@@ -105,6 +105,31 @@ if (x == 0) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Enemy
+if place_meeting(x,y,obj_cryingenemy){
+show_message("U DED!")
+game_restart()}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="acid">
       <action>
@@ -149,11 +174,11 @@ game_restart();
           <argument>
             <kind>1</kind>
             <string>///Obsolete
-/*
-starting_location = instance_find(starting_location, 0);
-x = start.x;
-y = start.y;
-instance_destroy(start);
+
+//starting_location = instance_find(starting_location, 0);
+//x = start.x;
+//y = start.y;
+//instance_destroy(start);
 </string>
           </argument>
         </arguments>
