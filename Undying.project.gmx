@@ -11,9 +11,16 @@
     <sprite>sprites\spr_acid</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_cryingenemy</sprite>
+    <sprite>sprites\spr_shootingenemy</sprite>
+    <sprite>sprites\spr_bullet</sprite>
+    <sprite>sprites\spr_checkpoint</sprite>
+    <sprite>sprites\spr_door</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_checkpoint.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\block</object>
     <object>objects\player</object>
@@ -21,13 +28,20 @@
     <object>objects\acid</object>
     <object>objects\button</object>
     <object>objects\obj_cryingenemy</object>
+    <object>objects\obj_shootingenemy</object>
+    <object>objects\obj_bullet</object>
+    <object>objects\obj_checkpoint</object>
+    <object>objects\obj_door</object>
+    <object>objects\obj_door_deactivated</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\inicijalizator</room>
     <room>rooms\room_1</room>
     <room>rooms\room_2</room>
     <room>rooms\room_3</room>
     <room>rooms\room_4</room>
     <room>rooms\room_5</room>
+    <room>rooms\room_6</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
