@@ -19,23 +19,24 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_checkpoint.gml</script>
+    <script>scripts\scr_death.gml</script>
+    <script>scripts\player_setup.gml</script>
   </scripts>
+  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\block</object>
     <object>objects\player</object>
-    <object>objects\starting_location</object>
     <object>objects\acid</object>
     <object>objects\button</object>
-    <object>objects\obj_cryingenemy</object>
-    <object>objects\obj_shootingenemy</object>
-    <object>objects\obj_bullet</object>
-    <object>objects\obj_checkpoint</object>
-    <object>objects\obj_door</object>
-    <object>objects\obj_door_deactivated</object>
+    <object>objects\cryingenemy</object>
+    <object>objects\shootingenemy</object>
+    <object>objects\bullet</object>
+    <object>objects\checkpoint</object>
+    <object>objects\door</object>
+    <object>objects\enemy</object>
+    <object>objects\ground</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\inicijalizator</room>
     <room>rooms\room_1</room>
     <room>rooms\room_2</room>
     <room>rooms\room_3</room>

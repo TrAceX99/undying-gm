@@ -3,7 +3,7 @@
   <spriteName>spr_button</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-image_index = 1;
-activated = 1;
+image_index = 0;
+activated = false;
 </string>
           </argument>
         </arguments>
@@ -50,13 +50,13 @@ activated = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>activated = 1;
+            <string>image_index = activated;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_bullet">
+    <event eventtype="4" ename="bullet">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -73,25 +73,12 @@ activated = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index = 1 and activated = 1
-{
-image_index = 0
-activated = 0
-alarm[0]=120
-with obj_door
-{
-instance_change (obj_door_deactivated,true)
-}
-}
-else if image_index = 0 and activated = 1
-{
-image_index = 1
-activated = 0
-alarm[0]=120
-with obj_door_deactivated {
-instance_change (obj_door,true)
-}
-}
+            <string>instance_destroy(other);
+activated = !activated;
+if (activated) instance_deactivate_object(door);
+else instance_activate_object(door);
+alarm[0] = 5;
+image_index = 2;
 </string>
           </argument>
         </arguments>
