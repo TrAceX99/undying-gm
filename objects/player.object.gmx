@@ -159,6 +159,10 @@ scr_checkpoint()}
 if place_meeting(x+1,y,obj_bullet){
 show_message("U DED!")
 scr_checkpoint()}
+
+if place_meeting(x+1,y,obj_door){
+show_message("U DED!")
+scr_checkpoint()}
 </string>
           </argument>
         </arguments>
