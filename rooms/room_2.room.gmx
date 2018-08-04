@@ -94,7 +94,6 @@
     <instance objName="block" x="480" y="480" name="inst_0A845D00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="448" y="480" name="inst_49A19288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="416" y="480" name="inst_28ED6E00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="starting_location" x="0" y="512" name="inst_C467C8AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="416" y="448" name="inst_104BAEB2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="512" y="416" name="inst_58C230B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="544" y="416" name="inst_5ECD6C48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -122,7 +121,7 @@
     <instance objName="block" x="640" y="512" name="inst_17E8F880" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="608" y="512" name="inst_AF6C0A59" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="576" y="512" name="inst_AB58021A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkpoint" x="544" y="320" name="inst_0A565C2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="checkpoint" x="544" y="320" name="inst_0A565C2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

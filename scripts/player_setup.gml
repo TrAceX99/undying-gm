@@ -1,0 +1,9 @@
+g = 1;
+vspd = 0;
+hspd = 0;
+jumpspeed = 14;
+maxspeed = 15;
+movespeed = 7;
+moveaccel = 2;
+damping = 1;
+dir = 0;

@@ -11,61 +11,46 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Setup
-g = 1;
-vspd = 0;
-hspd = 0;
-jumpspeed = 14;
-maxspeed = 15;
-movespeed = 7;
-moveaccel = 2;
-damping = 1;
-
-
-</string>
+            <kind>9</kind>
+            <script>player_setup</script>
           </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Checkpoint
-
-startx = x;
-starty = y;
-</string>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -83,25 +68,34 @@ starty = y;
           <argument>
             <kind>1</kind>
             <string>///Movement
-hspd -= sign(hspd) * damping;
+hspd -= dir * damping;
 hspd = clamp(hspd + (keyboard_check(vk_right) - keyboard_check(vk_left)) * moveaccel, -movespeed, movespeed);
 vspd = clamp(vspd + g, -maxspeed, maxspeed);
+dir = sign(hspd);
 
-if (place_meeting(x + hspd + sign(hspd), y, block)) {
-    while (!place_meeting(x + sign(hspd), y, block)) x += sign(hspd);
+if (place_meeting(x + hspd + dir, y, ground)) {
+    while (!place_meeting(x + dir, y, ground)) x += dir;
     hspd = 0;
 }
 x = clamp(x + hspd, 0, room_width);
+dir = sign(hspd);
 
-if (place_meeting(x, y + vspd + sign(vspd), block)) {
-    while (!place_meeting(x, y + sign(vspd), block)) y += sign(vspd);
+if (place_meeting(x, y + vspd + sign(vspd), ground)) {
+    while (!place_meeting(x, y + sign(vspd), ground)) y += sign(vspd);
     vspd = -keyboard_check_pressed(vk_space) * jumpspeed;
 }
+// Bouncing form enemies
+if (keyboard_check(vk_space) &amp;&amp; vspd &gt; 0 &amp;&amp; place_meeting(x, y + vspd + 1, enemy)) vspd = -jumpspeed;
+
 y = clamp(y + vspd, 0, room_height);
+
+
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -131,92 +125,185 @@ if (x == 0) {
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="4" ename="door">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Sudar sa neprijateljima
-if place_meeting(x+1,y,obj_cryingenemy){
-show_message("U DED!")
-scr_checkpoint()}
-
-if place_meeting(x+1,y,obj_shootingenemy){
-show_message("U DED!")
-scr_checkpoint()}
-
-if place_meeting(x+1,y,obj_bullet){
-show_message("U DED!")
-scr_checkpoint()}
-
-if place_meeting(x+1,y,obj_door){
-show_message("U DED!")
-scr_checkpoint()}
-</string>
+            <kind>9</kind>
+            <script>scr_death</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="bullet">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>scr_death</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="4" ename="acid">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Ded
-show_message("U DED!");
-scr_checkpoint();
-</string>
+            <kind>9</kind>
+            <script>scr_death</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="4">
+    <event eventtype="9" enumb="82">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>///Obsolete
-
-//starting_location = instance_find(starting_location, 0);
-//x = start.x;
-//y = start.y;
-//instance_destroy(start);
-</string>
+            <kind>9</kind>
+            <script>scr_death</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
