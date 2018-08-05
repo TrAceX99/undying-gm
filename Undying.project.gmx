@@ -15,6 +15,7 @@
     <sprite>sprites\spr_bullet</sprite>
     <sprite>sprites\spr_checkpoint</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_platform</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -34,6 +35,7 @@
     <object>objects\door</object>
     <object>objects\enemy</object>
     <object>objects\ground</object>
+    <object>objects\platform1</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_1</room>
@@ -42,6 +44,7 @@
     <room>rooms\room_4</room>
     <room>rooms\room_5</room>
     <room>rooms\room_6</room>
+    <room>rooms\room_7</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
