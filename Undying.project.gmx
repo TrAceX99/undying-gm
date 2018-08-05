@@ -22,7 +22,6 @@
     <script>scripts\scr_death.gml</script>
     <script>scripts\player_setup.gml</script>
   </scripts>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\block</object>
     <object>objects\player</object>
