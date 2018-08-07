@@ -7,8 +7,9 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_block</sprite>
+    <sprite>sprites\spr_player_dead</sprite>
     <sprite>sprites\spr_acid</sprite>
+    <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_cryingenemy</sprite>
     <sprite>sprites\spr_shootingenemy</sprite>
@@ -16,17 +17,21 @@
     <sprite>sprites\spr_checkpoint</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_platform</sprite>
+    <sprite>sprites\spr_spike</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
     <path>paths\path_7_1</path>
   </paths>
   <scripts name="scripts">
-    <script>scripts\scr_death.gml</script>
     <script>scripts\player_setup.gml</script>
     <script>scripts\trigger.gml</script>
     <script>scripts\debug_room.gml</script>
+    <script>scripts\death.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\block</object>
     <object>objects\player</object>
@@ -38,9 +43,12 @@
     <object>objects\checkpoint</object>
     <object>objects\door</object>
     <object>objects\enemy</object>
-    <object>objects\ground</object>
     <object>objects\platform1</object>
     <object>objects\platform</object>
+    <object>objects\spike</object>
+    <object>objects\body</object>
+    <object>objects\hazard</object>
+    <object>objects\ground</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_1</room>
