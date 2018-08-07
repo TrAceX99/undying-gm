@@ -18,10 +18,14 @@
     <sprite>sprites\spr_platform</sprite>
   </sprites>
   <backgrounds name="background"/>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path_7_1</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
     <script>scripts\player_setup.gml</script>
+    <script>scripts\trigger.gml</script>
+    <script>scripts\debug_room.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\block</object>
@@ -36,6 +40,7 @@
     <object>objects\enemy</object>
     <object>objects\ground</object>
     <object>objects\platform1</object>
+    <object>objects\platform</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_1</room>
