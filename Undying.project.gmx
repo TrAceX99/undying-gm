@@ -27,7 +27,8 @@
     <script>scripts\player_setup.gml</script>
     <script>scripts\trigger.gml</script>
     <script>scripts\debug_room.gml</script>
-    <script>scripts\death.gml</script>
+    <script>scripts\scr_death.gml</script>
+    <script>scripts\scr_physics.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -49,6 +50,7 @@
     <object>objects\body</object>
     <object>objects\hazard</object>
     <object>objects\ground</object>
+    <object>objects\body_solid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_1</room>
