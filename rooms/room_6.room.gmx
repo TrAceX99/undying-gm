@@ -84,7 +84,7 @@
     <instance objName="block" x="64" y="416" name="inst_50C58409" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="32" y="416" name="inst_505884C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="0" y="416" name="inst_77C1CD9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="button" x="64" y="544" name="inst_0456B138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="button" x="64" y="544" name="inst_0456B138" locked="0" code="linked = inst_FC9F1DC8;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="800" y="448" name="inst_3EF9170A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="928" y="416" name="inst_9998C22C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="928" y="416" name="inst_E91EBD4C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

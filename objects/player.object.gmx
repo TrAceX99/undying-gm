@@ -255,12 +255,14 @@ y = yprevious;
           <argument>
             <kind>1</kind>
             <string>///Based on scr_death
-sprite_index = noone;
-dead = true;
-controls_enabled = false;
-alarm[0]= 60;
-b = instance_create(x, y, body_solid);
-b.sprite_index = spr_player_dead;
+if (vspd &gt; 0) {
+    sprite_index = noone;
+    dead = true;
+    controls_enabled = false;
+    alarm[0]= 60;
+    b = instance_create(x, y, body_solid);
+    b.sprite_index = spr_player_dead;
+}
 </string>
           </argument>
         </arguments>
@@ -356,7 +358,7 @@ b.sprite_index = spr_player_dead;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>6</string>
+            <string>8</string>
           </argument>
           <argument>
             <kind>0</kind>

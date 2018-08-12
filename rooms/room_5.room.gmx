@@ -108,7 +108,7 @@
     <instance objName="block" x="832" y="448" name="inst_D5D52124" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="864" y="448" name="inst_8787BEA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="checkpoint" x="288" y="544" name="inst_539D3274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="button" x="128" y="544" name="inst_885FB957" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="button" x="128" y="544" name="inst_885FB957" locked="0" code="linked = inst_73F74848;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="door" x="896" y="384" name="inst_73F74848" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="64" y="512" name="inst_58F3C80B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="block" x="64" y="480" name="inst_FE24287B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
